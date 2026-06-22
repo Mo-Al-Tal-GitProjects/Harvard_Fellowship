@@ -1,0 +1,24 @@
+study_name: 1000g-chr22-umap-sensitivity
+random_seed: 2024
+
+data:
+  vcf_url: https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz
+  panel_url: https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/integrated_call_samples_v3.20130502.ALL.panel
+  vcf_sha256: a90c16c4ff2b3196476d506ae13cb3047fae8670163c7c932c4b0239aef3daf5
+  panel_sha256: b4023dc6ee2d62ee89c8d4d347db4d348e65518d66d346574cdae7a4bbd76858
+  cache_dir: data/cache
+  max_variants: 2500
+  min_maf: 0.05
+  max_missing_rate: 0.02
+  min_spacing_bp: 10000
+
+analysis:
+  pca_components: [10, 25, 50]
+  umap_neighbors: [5, 15, 50, 100]
+  umap_min_dist: [0.0, 0.1, 0.5]
+  seeds: [2024, 2025, 2026]
+  metric_neighbors: 15
+  distance_pairs: 20000
+  tsne_perplexity: 30.0
+
+output_dir: artifacts
